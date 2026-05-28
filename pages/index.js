@@ -84,7 +84,8 @@ export default function HomePage() {
       const data = await res.json();
 
       // On Vercel/server refreshes, the temporary API memory can restart and return
-      // the default empty site. Do not overwrite the browser's saved copy with that.
+      // the default empty site. 
+      // Do not overwrite the browser's saved copy with that.
       if (!saved || hasUserContent(data)) {
         applyStore(data);
         saveStore(data);
